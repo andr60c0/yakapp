@@ -43,10 +43,6 @@ function App() {
   
   <Nav />
       <Main deleteCard={deleteCard} cardAdded={cardAdded} moveCard={moveCard} cards={cards}/>
-
-  
-
-      
     </div>
   );
 }
