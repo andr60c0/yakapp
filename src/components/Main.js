@@ -1,5 +1,4 @@
 import React from "react";
-import Panel from 'muicss/lib/react/panel';
 import ListContainer from "./ListContainer";
 
 
@@ -9,9 +8,9 @@ export default function Main(props){
   const doneList = props.cards.filter(c=>c.list==="done")
     return (
       <main>
-        <Panel><ListContainer cardAdded={props.cardAdded} cards={todoList} showForm={true} name="Todo" /></Panel>
-        <Panel><ListContainer cardAdded={props.cardAdded} cards={doingList} name="Doing" /></Panel>
-        <Panel><ListContainer cardAdded={props.cardAdded} cards={doneList} name="Done" /></Panel>
+        <ListContainer cardAdded={props.cardAdded} cards={todoList} showForm={true} name="Todo" />
+        <ListContainer cardAdded={props.cardAdded} cards={doingList} name="Doing" />
+        <ListContainer cardAdded={props.cardAdded} cards={doneList} name="Done" />
         
       </main>
     )

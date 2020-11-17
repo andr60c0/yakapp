@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { IdentityContextProvider } from 'react-netlify-identity-widget'
+import 'react-netlify-identity-widget/styles.css'
+import "@reach/tabs/styles.css"
+const url = 'https://jolly-bhaskara-fd49c1.netlify.app/';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <IdentityContextProvider url={url}>
+      <App />
+    </IdentityContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
