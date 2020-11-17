@@ -12,7 +12,7 @@ export default function ListContainer(props){
           <h1>{props.name}</h1>
           
           {props.cards.map(card=>{
-            return <Card key={card._id} task={card.task} highlight={card.highlight} list={card.list} />
+            return <Card deleteCard={props.deleteCard} moveCard={props.moveCard} key={card._id} {...card} />
           })}
           {form}
           

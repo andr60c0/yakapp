@@ -13,13 +13,25 @@ import './App.css';
 function App() {
   const [cards, setCards] = useState([]);
   function cardAdded(task){
-  
     const payload = {
       task,
       highlight:false,
       list:"todo"
     }
     post(payload, cards, setCards);
+  }
+  function moveCard(newList, _id){
+    const nextCards = cards.map(c=>{
+      if(c._id===_id){
+        c.list=newList;
+      }
+      return c;
+    })
+    setCards(nextCards);
+  }
+  function deleteCard(_id){
+    const nextCards = cards.filter(c=>c._id!==_id);
+    setCards(nextCards);
   }
   useEffect(()=>{
     get(setCards)
@@ -30,7 +42,7 @@ function App() {
       
   
   <Nav />
-      <Main cardAdded={cardAdded} cards={cards}/>
+      <Main deleteCard={deleteCard} cardAdded={cardAdded} moveCard={moveCard} cards={cards}/>
 
   
 
